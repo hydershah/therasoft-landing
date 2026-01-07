@@ -75,14 +75,14 @@
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: var(--primary);
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .header-right {
@@ -209,6 +209,7 @@
         .hero-trust-badges {
             display: flex;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
         .trust-badge {
@@ -760,6 +761,10 @@
             .cta-section h2 {
                 font-size: 32px;
             }
+
+            .trust-bar-inner {
+                gap: 24px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -852,7 +857,9 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-inner">
-            <a href="#" class="logo">Thera<span>soft</span></a>
+            <a href="#" class="logo">
+                <img src="https://therasoft.com/wp-content/uploads/2022/05/logo.png" alt="TheraSoft">
+            </a>
             <div class="header-right">
                 <a href="tel:+18884358206" class="phone-cta" id="header-phone">
                     <i data-lucide="phone"></i>
@@ -900,7 +907,7 @@
     </section>
 
     <!-- Pain Points Section -->
-    <section class="pain-points">
+    <section class="pain-points" id="pain-points">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">The Challenges You Face</span>
@@ -1189,7 +1196,9 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <a href="#" class="logo">Thera<span>soft</span></a>
+                    <a href="#" class="logo" style="margin-bottom: 16px;">
+                        <img src="https://therasoft.com/wp-content/uploads/2022/05/logo.png" alt="TheraSoft" style="filter: brightness(0) invert(1);">
+                    </a>
                     <p>The all-in-one practice management solution built specifically for mental health professionals.</p>
                     <div class="footer-contact">
                         <a href="tel:+18884358206" class="phone-cta" id="footer-phone">
