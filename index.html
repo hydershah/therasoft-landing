@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheraSoft - Simplify Your Practice Management | Free Trial</title>
+    <meta name="description" content="Streamline administrative workflows, automate clinical documentation with AI, and simplify billing. Start your free trial of TheraSoft today.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #00ACE6;
+            --primary-dark: #0095c8;
+            --secondary: #151648;
+            --accent: #EEC782;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --success: #10b981;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray-700);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .phone-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .phone-cta:hover {
+            color: var(--primary);
+        }
+
+        .phone-cta i {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #1e1f5c;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-trust {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hero-trust-badges {
+            display: flex;
+            gap: 12px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+
+        .trust-badge i {
+            color: var(--success);
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(0, 172, 230, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pain-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .pain-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .pain-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(0, 172, 230, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .pain-icon i {
+            width: 32px;
+            height: 32px;
+            color: var(--primary);
+        }
+
+        .pain-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .pain-card p {
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        .pain-card ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .pain-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--gray-700);
+        }
+
+        .pain-card li i {
+            width: 20px;
+            height: 20px;
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            padding: 100px 0;
+        }
+
+        .feature-section:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .feature-grid.reverse {
+            direction: rtl;
+        }
+
+        .feature-grid.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-content {
+            max-width: 520px;
+        }
+
+        .feature-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(0, 172, 230, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .feature-label i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .feature-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .feature-content > p {
+            font-size: 18px;
+            color: var(--gray-600);
+            margin-bottom: 28px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .feature-list li i {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-list li strong {
+            color: var(--secondary);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--gray-200);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--gray-50);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 48px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            color: var(--gray-700);
+            margin-bottom: 24px;
+            margin-top: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .testimonial-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .testimonial-info p {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e1f5c 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: var(--gray-200);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn-primary {
+            background: var(--accent);
+            color: var(--secondary);
+        }
+
+        .cta-buttons .btn-primary:hover {
+            background: #d4b06e;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 100px 0;
+            background: var(--gray-50);
+        }
+
+        .form-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .form-header p {
+            color: var(--gray-600);
+        }
+
+        .form-iframe-container {
+            position: relative;
+            min-height: 600px;
+        }
+
+        .form-iframe-container iframe {
+            width: 100%;
+            height: 1000px;
+            border: none;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .tve_iframe_cover {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0 30px;
+            background: var(--secondary);
+            color: var(--gray-200);
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: var(--gray-200);
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-contact a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .footer-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .footer-badge i {
+            width: 18px;
+            height: 18px;
+            color: var(--success);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .hero-inner,
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-grid.reverse {
+                direction: ltr;
+            }
+
+            .pain-cards,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2,
+            .feature-content h2,
+            .cta-section h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-right {
+                gap: 16px;
+            }
+
+            .phone-cta span {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-trust {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-trust-badges {
+                flex-wrap: wrap;
+            }
+
+            .pain-points,
+            .feature-section,
+            .testimonials,
+            .form-section {
+                padding: 60px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .form-wrapper {
+                padding: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        /* Sticky mobile CTA */
+        .mobile-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 20px;
+            background: var(--white);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .mobile-sticky-cta .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Thera<span>soft</span></a>
+            <div class="header-right">
+                <a href="tel:+18884358206" class="phone-cta" id="header-phone">
+                    <i data-lucide="phone"></i>
+                    <span class="phone-number">1-888-435-8206</span>
+                </a>
+                <a href="#form" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>Stop Drowning in <span>Paperwork</span>. Start Focusing on <span>Patients</span>.</h1>
+                <p>TheraSoft eliminates administrative burden with AI-powered documentation, automated billing, and streamlined workflows - so you can spend more time doing what you do best.</p>
+                <div class="hero-ctas">
+                    <a href="#form" class="btn btn-primary btn-large">Start Your Free Trial</a>
+                    <a href="tel:+18884358206" class="btn btn-outline btn-large phone-cta-btn" id="hero-phone">
+                        <i data-lucide="phone"></i>
+                        <span class="phone-number">1-888-435-8206</span>
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="hero-trust-badges">
+                        <div class="trust-badge">
+                            <i data-lucide="shield-check"></i>
+                            HIPAA Compliant
+                        </div>
+                        <div class="trust-badge">
+                            <i data-lucide="lock"></i>
+                            Bank-Level Security
+                        </div>
+                        <div class="trust-badge">
+                            <i data-lucide="credit-card"></i>
+                            No Credit Card Required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Therapist working with client using TheraSoft practice management software">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Challenges You Face</span>
+                <h2>We Understand Your Daily Struggles</h2>
+                <p>Running a therapy practice means juggling countless tasks that take you away from patient care. TheraSoft was built to solve these exact problems.</p>
+            </div>
+            <div class="pain-cards">
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="clipboard-list"></i>
+                    </div>
+                    <h3>Administrative Overload</h3>
+                    <p>Scheduling conflicts, missed appointments, and endless paperwork drain your energy and time.</p>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> Automated appointment scheduling & reminders</li>
+                        <li><i data-lucide="check-circle"></i> Digital intake forms clients complete online</li>
+                        <li><i data-lucide="check-circle"></i> One-click calendar management</li>
+                        <li><i data-lucide="check-circle"></i> Secure client portal for self-service</li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Simplify Admin Work</a>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3>Clinical Documentation</h3>
+                    <p>Hours spent writing notes after sessions means late nights and weekend catch-up work.</p>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> AI-powered progress notes in seconds</li>
+                        <li><i data-lucide="check-circle"></i> SOAP, DAP, BIRP, GIRP formats</li>
+                        <li><i data-lucide="check-circle"></i> Customizable templates for your style</li>
+                        <li><i data-lucide="check-circle"></i> Voice-to-text documentation</li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Try AI Notes Free</a>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i data-lucide="receipt"></i>
+                    </div>
+                    <h3>Billing Headaches</h3>
+                    <p>Claim denials, late payments, and complex insurance processes hurt your bottom line.</p>
+                    <ul>
+                        <li><i data-lucide="check-circle"></i> Automated insurance claim submission</li>
+                        <li><i data-lucide="check-circle"></i> Real-time eligibility verification</li>
+                        <li><i data-lucide="check-circle"></i> Integrated payment processing</li>
+                        <li><i data-lucide="check-circle"></i> ERA/EOB auto-posting</li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Fix Billing Issues</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 1: Admin Workflows -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <span class="feature-label">
+                        <i data-lucide="calendar-check"></i>
+                        Streamlined Workflows
+                    </span>
+                    <h2>Reclaim 10+ Hours Every Week with Automated Admin</h2>
+                    <p>Your time is valuable. TheraSoft automates the repetitive tasks that consume your day, from appointment scheduling to client communications.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <div><strong>Smart Reminders:</strong> Automated email & SMS appointment reminders reduce no-shows by up to 40%</div>
+                        </li>
+                        <li>
+                            <i data-lucide="users"></i>
+                            <div><strong>Client Self-Service:</strong> Clients book, reschedule, and complete forms through a secure portal</div>
+                        </li>
+                        <li>
+                            <i data-lucide="video"></i>
+                            <div><strong>Integrated Telehealth:</strong> HIPAA-compliant video sessions built right in - no extra software needed</div>
+                        </li>
+                        <li>
+                            <i data-lucide="repeat"></i>
+                            <div><strong>Recurring Sessions:</strong> Set up standing appointments with one click</div>
+                        </li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Start Free Trial</a>
+                </div>
+                <div class="feature-image">
+                    <img src="https://images.pexels.com/photos/4098232/pexels-photo-4098232.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Therapist scheduling appointments on TheraSoft calendar dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 2: AI Clinical Notes -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <span class="feature-label">
+                        <i data-lucide="sparkles"></i>
+                        AI-Powered Documentation
+                    </span>
+                    <h2>Write Clinical Notes in Seconds, Not Hours</h2>
+                    <p>Our AI understands therapy. Simply review your session summary and generate comprehensive progress notes in any format - giving you back your evenings and weekends.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i data-lucide="file-check"></i>
+                            <div><strong>Multiple Formats:</strong> Generate SOAP, DAP, BIRP, or GIRP notes with one click</div>
+                        </li>
+                        <li>
+                            <i data-lucide="shield"></i>
+                            <div><strong>Compliant & Accurate:</strong> AI trained on clinical best practices ensures proper documentation</div>
+                        </li>
+                        <li>
+                            <i data-lucide="pen-tool"></i>
+                            <div><strong>Customizable:</strong> Add your personal touch with editable templates</div>
+                        </li>
+                        <li>
+                            <i data-lucide="mic"></i>
+                            <div><strong>Voice Input:</strong> Dictate notes and let AI structure them for you</div>
+                        </li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Try AI Notes Free</a>
+                </div>
+                <div class="feature-image">
+                    <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Clinical documentation interface showing AI-generated progress notes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 3: Billing -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <span class="feature-label">
+                        <i data-lucide="dollar-sign"></i>
+                        Simplified Billing
+                    </span>
+                    <h2>Get Paid Faster with Automated Billing & Claims</h2>
+                    <p>Stop chasing payments and fighting with insurance companies. TheraSoft handles claims submission, tracks payments, and puts money in your account faster.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <i data-lucide="send"></i>
+                            <div><strong>One-Click Claims:</strong> Submit insurance claims directly from the session note</div>
+                        </li>
+                        <li>
+                            <i data-lucide="search-check"></i>
+                            <div><strong>Eligibility Checks:</strong> Verify insurance coverage before the first session</div>
+                        </li>
+                        <li>
+                            <i data-lucide="credit-card"></i>
+                            <div><strong>Easy Payments:</strong> Accept credit cards, HSA/FSA, and auto-charge cards on file</div>
+                        </li>
+                        <li>
+                            <i data-lucide="file-spreadsheet"></i>
+                            <div><strong>Financial Reports:</strong> Track revenue, outstanding balances, and payer performance</div>
+                        </li>
+                    </ul>
+                    <a href="#form" class="btn btn-primary">Simplify Billing Now</a>
+                </div>
+                <div class="feature-image">
+                    <img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" alt="Billing dashboard showing claims and payment tracking">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Hours saved per week on admin</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Reduction in no-shows</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Claim acceptance rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2 Min</div>
+                    <div class="stat-label">Average note completion time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Success Stories</span>
+                <h2>Trusted by Therapists Everywhere</h2>
+                <p>See why mental health professionals choose TheraSoft to run their practices.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">The AI notes feature alone has given me back my evenings. I used to spend 2-3 hours after my last session catching up on documentation. Now I'm done in minutes.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div class="testimonial-info">
+                            <h4>Dr. Sarah K.</h4>
+                            <p>Licensed Psychologist, Private Practice</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">Switching to TheraSoft was the best decision for my practice. Claims that used to take weeks now get processed in days. My revenue is up 25% just from better billing.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <h4>Michael R., LCSW</h4>
+                            <p>Clinical Social Worker</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">My clients love the portal. They can schedule their own appointments, fill out forms before coming in, and access their superbills anytime. Less work for everyone.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JL</div>
+                        <div class="testimonial-info">
+                            <h4>Jennifer L., LPC</h4>
+                            <p>Licensed Professional Counselor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Practice?</h2>
+            <p>Join thousands of therapists who've simplified their workflows and reclaimed their time with TheraSoft.</p>
+            <div class="cta-buttons">
+                <a href="#form" class="btn btn-primary btn-large">Start Your Free Trial</a>
+                <a href="tel:+18884358206" class="btn btn-outline btn-large phone-cta-btn" id="cta-phone" style="border-color: var(--white); color: var(--white);">
+                    <i data-lucide="phone"></i>
+                    <span>Talk to Us: <span class="phone-number">1-888-435-8206</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Start Your Free Trial Today</h2>
+                    <p>No credit card required. Get instant access to all features.</p>
+                </div>
+                <div class="form-iframe-container">
+                    <script type="text/javascript">
+                        window.addEventListener("message", function (event) {
+                            if (event.data.action === "startOnboarding") {
+                                startOnboarding(event.data.url);
+                            }
+                        });
+                        function startOnboarding(url) {
+                            window.location.href = url;
+                        }
+                    </script>
+                    <iframe src="https://secure.therasoft.com/TMS/SelfServeSignup.aspx" frameborder="0" id="onboard_frame" style="width: 100%; height: 1000px; overflow-y:auto; overflow-x:hidden;"></iframe>
+                    <div class="tve_iframe_cover"></div>
+                    <script type="text/javascript">
+                        var track_url = document.referrer ? encodeURIComponent(document.referrer) : "";
+                        if (track_url != '')
+                            document.getElementById('onboard_frame').src = "https://secure.therasoft.com/TMS/SelfServeSignup.aspx?ref=" + track_url;
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Thera<span>soft</span></a>
+                    <p>The all-in-one practice management solution built specifically for mental health professionals.</p>
+                    <div class="footer-contact">
+                        <a href="tel:+18884358206" class="phone-cta" id="footer-phone">
+                            <i data-lucide="phone"></i>
+                            <span class="phone-number">1-888-435-8206</span>
+                        </a>
+                        <a href="mailto:info@therasoft.com">
+                            <i data-lucide="mail"></i>
+                            info@therasoft.com
+                        </a>
+                        <a href="#">
+                            <i data-lucide="map-pin"></i>
+                            1420 5th Ave Ste 2200, Seattle, WA 98101
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#form">Scheduling</a></li>
+                        <li><a href="#form">AI Notes</a></li>
+                        <li><a href="#form">Billing & Claims</a></li>
+                        <li><a href="#form">Telehealth</a></li>
+                        <li><a href="#form">Client Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Started</h4>
+                    <ul>
+                        <li><a href="#form">Start Free Trial</a></li>
+                        <li><a href="tel:+18884358206" class="phone-cta-footer"><span class="phone-number">1-888-435-8206</span></a></li>
+                        <li><a href="mailto:info@therasoft.com">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TheraSoft. All rights reserved.</p>
+                <div class="footer-badges">
+                    <div class="footer-badge">
+                        <i data-lucide="shield-check"></i>
+                        HIPAA Compliant
+                    </div>
+                    <div class="footer-badge">
+                        <i data-lucide="lock"></i>
+                        256-bit Encryption
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="#form" class="btn btn-primary">Start Your Free Trial</a>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Phone Number Swap Script for gclid/fbclid -->
+    <script>
+        (function() {
+            // Configuration - Replace these with actual tracking numbers when available
+            const ROUTING_NUMBER = '+18884358206';
+            const GOOGLE_TRACKING_NUMBER = '+18884358206'; // Replace with actual Google forwarding number
+            const META_TRACKING_NUMBER = '+18884358206';   // Replace with actual Meta forwarding number
+
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const hasGclid = urlParams.has('gclid');
+            const hasFbclid = urlParams.has('fbclid');
+
+            // Determine which number to show
+            let displayNumber = ROUTING_NUMBER;
+            let telNumber = ROUTING_NUMBER;
+
+            if (hasGclid) {
+                displayNumber = formatPhoneNumber(GOOGLE_TRACKING_NUMBER);
+                telNumber = GOOGLE_TRACKING_NUMBER;
+            } else if (hasFbclid) {
+                displayNumber = formatPhoneNumber(META_TRACKING_NUMBER);
+                telNumber = META_TRACKING_NUMBER;
+            }
+
+            // Format phone number for display
+            function formatPhoneNumber(phone) {
+                const cleaned = phone.replace(/\D/g, '');
+                if (cleaned.length === 11 && cleaned.startsWith('1')) {
+                    return '1-' + cleaned.slice(1, 4) + '-' + cleaned.slice(4, 7) + '-' + cleaned.slice(7);
+                }
+                return phone;
+            }
+
+            // Update all phone numbers on the page
+            function updatePhoneNumbers() {
+                // Update display text
+                const phoneDisplays = document.querySelectorAll('.phone-number');
+                phoneDisplays.forEach(function(el) {
+                    el.textContent = formatPhoneNumber(telNumber);
+                });
+
+                // Update tel: links
+                const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+                phoneLinks.forEach(function(el) {
+                    el.href = 'tel:' + telNumber;
+                });
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updatePhoneNumbers);
+            } else {
+                updatePhoneNumbers();
+            }
+        })();
+    </script>
+</body>
+</html>
