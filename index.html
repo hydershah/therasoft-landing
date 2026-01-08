@@ -6,6 +6,19 @@
     <title>TheraSoft - Simplify Your Practice Management | Free Trial</title>
     <meta name="description" content="Streamline administrative workflows, automate clinical documentation with AI, and simplify billing. Start your free trial of TheraSoft today.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-180x180.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TheraSoft - Simplify Your Practice Management">
+    <meta property="og:description" content="Streamline administrative workflows, automate clinical documentation with AI, and simplify billing. Start your free trial today.">
+    <meta property="og:image" content="https://therasoft.com/wp-content/uploads/2022/05/logo.png">
+    <meta property="og:url" content="https://therasoft.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +27,34 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
+    <!-- MegaTag Tracking Configuration -->
+    <script>
+        // Set configuration BEFORE loading the optimizer script
+        window.MEGA_TAG_CONFIG = {
+            siteKey: "YOUR_SITE_KEY",      // Required - get from admin panel
+            gtmId: "GTM-XXXXXXX",          // Client's GTM container ID
+            gaId: "G-XXXXXXXXXX",          // Client's GA4 measurement ID
+            pixelId: "1234567890"          // Client's Meta Pixel ID
+        };
+
+        // Set API endpoints
+        window.API_ENDPOINT = "https://optimizer.gomega.ai";
+        window.TRACKING_API_ENDPOINT = "https://events-api.gomega.ai";
+    </script>
+    <script src="https://cdn.gomega.ai/scripts/optimizer.min.js" async></script>
+
+    <!-- CallTrackingMetrics -->
+    <script src="https://572388.tctm.co/t.js" async></script>
+
     <style>
         :root {
-            --primary: #00ACE6;
-            --primary-dark: #0095c8;
+            --primary: #F6C453;
+            --primary-dark: #E5B343;
+            --primary-light: #F3C97A;
+            --teal: #00ACE6;
+            --teal-dark: #0095c8;
             --secondary: #151648;
-            --accent: #EEC782;
+            --accent: #F3C97A;
             --white: #ffffff;
             --gray-50: #f9fafb;
             --gray-100: #f3f4f6;
@@ -102,7 +137,7 @@
         }
 
         .phone-cta:hover {
-            color: var(--primary);
+            color: var(--teal);
         }
 
         .phone-cta i {
@@ -127,7 +162,8 @@
 
         .btn-primary {
             background: var(--primary);
-            color: var(--white);
+            color: var(--secondary);
+            font-weight: 600;
         }
 
         .btn-primary:hover {
@@ -148,12 +184,12 @@
 
         .btn-outline {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: var(--teal);
+            border: 2px solid var(--teal);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
+            background: var(--teal);
             color: var(--white);
         }
 
@@ -184,7 +220,7 @@
         }
 
         .hero-content h1 span {
-            color: var(--primary);
+            color: var(--teal);
         }
 
         .hero-content p {
@@ -256,7 +292,7 @@
             display: inline-block;
             padding: 8px 16px;
             background: rgba(0, 172, 230, 0.1);
-            color: var(--primary);
+            color: var(--teal);
             border-radius: 20px;
             font-size: 14px;
             font-weight: 500;
@@ -290,12 +326,16 @@
             box-shadow: var(--shadow);
             border: 1px solid var(--gray-200);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .pain-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
             border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(246, 196, 83, 0.05) 0%, var(--white) 100%);
         }
 
         .pain-icon {
@@ -312,7 +352,7 @@
         .pain-icon i {
             width: 32px;
             height: 32px;
-            color: var(--primary);
+            color: var(--teal);
         }
 
         .pain-card h3 {
@@ -330,6 +370,13 @@
         .pain-card ul {
             list-style: none;
             margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .pain-card .btn {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
         }
 
         .pain-card li {
@@ -382,7 +429,7 @@
             gap: 8px;
             padding: 8px 16px;
             background: rgba(0, 172, 230, 0.1);
-            color: var(--primary);
+            color: var(--teal);
             border-radius: 20px;
             font-size: 14px;
             font-weight: 500;
@@ -423,7 +470,7 @@
         .feature-list li i {
             width: 24px;
             height: 24px;
-            color: var(--primary);
+            color: var(--teal);
             flex-shrink: 0;
             margin-top: 2px;
         }
@@ -458,7 +505,7 @@
         .stat-number {
             font-size: 48px;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 8px;
         }
 
@@ -480,16 +527,25 @@
         }
 
         .testimonial-card {
-            background: var(--gray-50);
+            background: var(--white);
             border-radius: 16px;
             padding: 32px;
             position: relative;
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
 
         .testimonial-quote {
             font-size: 48px;
-            color: var(--primary);
-            opacity: 0.3;
+            color: var(--accent);
+            opacity: 0.5;
             position: absolute;
             top: 20px;
             left: 24px;
@@ -514,7 +570,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: var(--primary);
+            background: var(--teal);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -532,6 +588,21 @@
         .testimonial-info p {
             font-size: 14px;
             color: var(--gray-600);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            margin-top: 20px;
+        }
+
+        .testimonial-stars svg {
+            width: 20px;
+            height: 20px;
+            color: #FBBF24;
+            fill: #FBBF24;
+            stroke: #FBBF24;
         }
 
         /* CTA Section */
@@ -637,8 +708,14 @@
 
         .footer-brand .logo {
             color: var(--white);
-            margin-bottom: 16px;
-            display: inline-block;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-logo img {
+            filter: brightness(0) invert(1);
+            height: 40px;
+            width: auto;
         }
 
         .footer-brand p {
@@ -662,12 +739,14 @@
         }
 
         .footer-contact a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .footer-contact i {
             width: 18px;
             height: 18px;
+            color: var(--accent);
+            flex-shrink: 0;
         }
 
         .footer-links h4 {
@@ -692,7 +771,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .footer-bottom {
@@ -1110,6 +1189,13 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
                     <p class="testimonial-text">The AI notes feature alone has given me back my evenings. I used to spend 2-3 hours after my last session catching up on documentation. Now I'm done in minutes.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">SK</div>
@@ -1121,6 +1207,13 @@
                 </div>
                 <div class="testimonial-card">
                     <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
                     <p class="testimonial-text">Switching to TheraSoft was the best decision for my practice. Claims that used to take weeks now get processed in days. My revenue is up 25% just from better billing.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">MR</div>
@@ -1132,6 +1225,13 @@
                 </div>
                 <div class="testimonial-card">
                     <span class="testimonial-quote">"</span>
+                    <div class="testimonial-stars">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
                     <p class="testimonial-text">My clients love the portal. They can schedule their own appointments, fill out forms before coming in, and access their superbills anytime. Less work for everyone.</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">JL</div>
@@ -1196,8 +1296,8 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <a href="#" class="logo" style="margin-bottom: 16px;">
-                        <img src="https://therasoft.com/wp-content/uploads/2022/05/logo.png" alt="TheraSoft" style="filter: brightness(0) invert(1);">
+                    <a href="#" class="logo footer-logo">
+                        <img src="https://therasoft.com/wp-content/uploads/2022/05/logo.png" alt="TheraSoft">
                     </a>
                     <p>The all-in-one practice management solution built specifically for mental health professionals.</p>
                     <div class="footer-contact">
