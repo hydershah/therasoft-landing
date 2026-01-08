@@ -7,9 +7,8 @@
     <meta name="description" content="Streamline administrative workflows, automate clinical documentation with AI, and simplify billing. Start your free trial of TheraSoft today.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-192x192.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="https://therasoft.com/wp-content/uploads/2022/05/cropped-favicon-180x180.png">
+    <link rel="icon" href="https://therasoft.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://therasoft.com/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph -->
     <meta property="og:title" content="TheraSoft - Simplify Your Practice Management">
@@ -695,8 +694,8 @@
         /* Footer */
         .footer {
             padding: 60px 0 30px;
-            background: var(--secondary);
-            color: var(--gray-200);
+            background: var(--gray-50);
+            color: var(--gray-700);
         }
 
         .footer-inner {
@@ -714,9 +713,6 @@
 
         .footer-logo {
             display: inline-block;
-            background: var(--white);
-            padding: 20px 28px;
-            border-radius: 12px;
             margin-bottom: 20px;
         }
 
@@ -728,7 +724,7 @@
         }
 
         .footer-brand p {
-            color: var(--gray-200);
+            color: var(--gray-600);
             margin-bottom: 20px;
         }
 
@@ -742,24 +738,24 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: var(--gray-200);
+            color: var(--gray-700);
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .footer-contact a:hover {
-            color: var(--accent);
+            color: var(--teal);
         }
 
         .footer-contact i {
             width: 18px;
             height: 18px;
-            color: var(--accent);
+            color: var(--teal);
             flex-shrink: 0;
         }
 
         .footer-links h4 {
-            color: var(--white);
+            color: var(--secondary);
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -774,21 +770,25 @@
         }
 
         .footer-links a {
-            color: var(--gray-200);
+            color: var(--gray-600);
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--teal);
         }
 
         .footer-bottom {
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--gray-200);
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-600);
         }
 
         .footer-bottom p {
@@ -806,6 +806,7 @@
             align-items: center;
             gap: 6px;
             font-size: 14px;
+            color: var(--gray-600);
         }
 
         .footer-badge i {
